@@ -57,7 +57,8 @@ class MatchAnyCharacterTest {
   void matchesNeedsTheWholeInputButFindDoesNot() {
     assertFalse(Pattern.compile(".").matcher("ab").matches());
     assertTrue(Pattern.compile(".").matcher("ab").find());
-    assertEquals("ID-A7K2", MatchAnyCharacter.firstMatch("ID-.{4}", "Order ID-A7K2 shipped"));
+    assertEquals("cat", MatchAnyCharacter.firstMatch("c.t", "the cat sat"));
+    assertTrue("hello".matches("h.{4}"));
   }
 
   @Test

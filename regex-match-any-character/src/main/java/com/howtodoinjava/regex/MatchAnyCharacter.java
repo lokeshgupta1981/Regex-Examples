@@ -33,7 +33,7 @@ public class MatchAnyCharacter {
     show("\"\".matches(\".+\")", "".matches(".+"));
     show("\"abc\".matches(\".{3}\")", "abc".matches(".{3}"));
     show("\"abcde\".matches(\".{2,4}\")", "abcde".matches(".{2,4}"));
-    show("\"ID-A7K2\".matches(\"ID-.{4}\")", "ID-A7K2".matches("ID-.{4}"));
+    show("\"hello\".matches(\"h.{4}\")", "hello".matches("h.{4}"));
 
     section("4. Greedy and lazy");
     String html = "<b>Java</b> and <b>Regex</b>";
@@ -45,7 +45,7 @@ public class MatchAnyCharacter {
     section("5. matches() versus find()");
     show("Pattern.compile(\".\").matcher(\"ab\").matches()", Pattern.compile(".").matcher("ab").matches());
     show("Pattern.compile(\".\").matcher(\"ab\").find()", Pattern.compile(".").matcher("ab").find());
-    show("find ID-.{4} in \"Order ID-A7K2 shipped\"", firstMatch("ID-.{4}", "Order ID-A7K2 shipped"));
+    show("find c.t in \"the cat sat\"", firstMatch("c.t", "the cat sat"));
 
     section("6. A literal dot");
     show("\"abc\".matches(\"a.c\")", "abc".matches("a.c"));
